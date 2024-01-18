@@ -2,8 +2,7 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
-}
-  
+} 
 header {
     position: fixed;
     z-index: 10;
@@ -24,6 +23,7 @@ header {
         align-items: center;
         animation: animation1 4s;
         color: rgb(47, 47, 47);
+        animation: lumiere 10s infinite;
         .h3 {
             #nuit_color{
                 color: aqua;
@@ -33,16 +33,7 @@ header {
 
         }
     }
-    @keyframes animation2 {
-        0% {
-        transform: translateX(0);
-        opacity: 0;
-        }
-        100% {
-        transform: translateX(0);
-        opacity: 1;
-        }
-    }
+    
     @keyframes animation1 {
         0% {
         transform: translateX(200px);
@@ -53,6 +44,23 @@ header {
         opacity: 1;
         }
     }
+    @keyframes lumiere {
+        0%, 20%, 50%, 80%, 100% {
+            color: #fff;
+          }
+          25%, 55% {
+            color: #ffc107;
+          }
+          45%, 75% {
+            color: #17a2b8;
+          }
+          70%, 95% {
+            color: #28a745;
+          }
+          90% {
+            color: #dc3545;
+          }          
+    }
     menu {
         margin: 0;
         padding: 0;
@@ -61,6 +69,7 @@ header {
         nav {
             height: 100%;
             width: 100%;
+            display: flex;
             ul {
                 display: flex;
                 justify-content: space-between;
@@ -69,6 +78,7 @@ header {
                 width: 100%;
                 list-style-type: none;
                 margin: 0;
+                animation: came1 7s;
                 li a {
                     text-decoration: none;
                     color: black;
@@ -76,10 +86,19 @@ header {
                     margin: 20px;
                 }
                 :hover{
-                    color: red;
-                    transition: 1s;
+                    color: blue;
                     font-size: 22px;
                 }
+            }
+            @keyframes came1 {
+                0% {
+                    transform: translateX(200px);
+                    opacity: 0;
+                    }
+                    100% {
+                    transform: translateX(0);
+                    opacity: 1;
+                    }
             }
         }
     }
@@ -97,6 +116,7 @@ header {
             height: 50%;
             width: 100%;
             font-family: Georgia, 'Times New Roman', Times, serif;
+            
             a {
                 text-decoration: none;
                 color: black;
@@ -139,11 +159,9 @@ header {
             font-size: 100px;
         }
     }
-    
     h4{
         margin: 0;
     }
-    
 }
   
 main {
@@ -197,8 +215,6 @@ main {
         pointer-events: none;
     }
 }
-
-
 .container {
     display: flex;
     flex-direction: column;
@@ -209,27 +225,22 @@ main {
     top: 140px;
     position: relative;
 }
-
 .form-container {
     background-color: #fff;
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 8px;
     width: 300px;
-
     h2 {
         text-align: center;
         color: #333;
     }
-
     form {
         display: flex;
         flex-direction: column;
-
         label {
             margin-bottom: 8px;
         }
-
         input,
         select {
             padding: 8px;
@@ -238,17 +249,14 @@ main {
             border-radius: 4px;
             outline: none;
         }
-
         .gender-options {
             display: flex;
             flex-direction: column;
             margin-bottom: 16px;
-
             label {
                 margin-bottom: 8px;
             }
         }
-
         button {
             padding: 10px;
             background-color: #3498db;
@@ -257,7 +265,6 @@ main {
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
-
             &:hover {
                 background-color: #2980b9;
             }
@@ -266,14 +273,12 @@ main {
 }
 
 // Sass Additionnel pour la Page de Réservations de Chambres
-
 .content-container {
     form {
         label {
             margin-bottom: 8px;
             display: block;
         }
-
         select,
         input[type="date"],
         input[type="number"],
@@ -285,7 +290,6 @@ main {
             outline: none;
             width: 100%;
         }
-
         button {
             padding: 10px;
             background-color: #3498db;
@@ -295,7 +299,6 @@ main {
             cursor: pointer;
             font-size: 16px;
             width: 100%;
-
             &:hover {
                 background-color: #2980b9;
             }
@@ -304,14 +307,12 @@ main {
 }
 
 // Sass Additionnel pour la Page de Commandes
-
 .content-container {
     form {
         label {
             margin-bottom: 8px;
             display: block;
         }
-
         select,
         input[type="number"],
         textarea {
@@ -322,7 +323,6 @@ main {
             outline: none;
             width: 100%;
         }
-
         button {
             padding: 10px;
             background-color: #3498db;
@@ -332,14 +332,12 @@ main {
             cursor: pointer;
             font-size: 16px;
             width: 100%;
-
             &:hover {
                 background-color: #2980b9;
             }
         }
     }
 }
-
 
 //recuperation
 .recovery-container {
@@ -350,38 +348,30 @@ main {
     width: 70%;
     margin: 20px auto; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
     h2 {
         text-align: center;
         color: #333;
         margin-bottom: 20px;
     }
-
     .reservation-details,
     .food-orders {
         margin-bottom: 20px;
-
         h3 {
             font-size: 18px;
             margin-bottom: 10px;
         }
-
         p {
             margin-bottom: 8px;
         }
-
         ul {
             list-style-type: none;
             padding: 0;
-
             li {
                 margin-bottom: 5px;
             }
         }
     }
 }
-
-
 footer{
     background-color: rgb(98, 90, 90);
     height: 100%;
@@ -389,8 +379,7 @@ footer{
     position: relative;
     color: white;
     display: flex;
-    justify-content: space-between;
-  
+    justify-content: space-between; 
     section{
       display: flex;
       justify-content: space-between;
@@ -424,5 +413,4 @@ footer{
         }
       }
     }
-
 }
